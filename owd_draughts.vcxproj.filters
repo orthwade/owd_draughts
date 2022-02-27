@@ -114,9 +114,6 @@
     <ClCompile Include="src\graphics\rect\c_batches.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -228,16 +225,10 @@
     <ClCompile Include="src\misc\text_file_to_string.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_entity.cpp">
+    <ClCompile Include="src\strings\compare_strings.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_field.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_piece.cpp">
+    <ClCompile Include="src\input\c_input_manager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\graphics\batches\c_batch_handler.cpp">
@@ -258,7 +249,25 @@
     <ClCompile Include="src\graphics\batches\c_graphic_unit_textured.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\strings\compare_strings.cpp">
+    <ClCompile Include="src\draughts\c_draughts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_entity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_field.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_piece.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debug\c_ogl_debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\debug\c_oal_debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -720,9 +729,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\rect\c_batches.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\graphics\rect\c_graphic_unit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h">
@@ -1682,16 +1688,10 @@
     <ClInclude Include="src\misc\text_file_to_string.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_entity.h">
+    <ClInclude Include="src\strings\compare_strings.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_field.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_piece.h">
+    <ClInclude Include="src\input\c_input_manager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\graphics\batches\c_batch_handler.h">
@@ -1712,7 +1712,25 @@
     <ClInclude Include="src\graphics\batches\c_graphic_unit_textured.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\strings\compare_strings.h">
+    <ClInclude Include="src\draughts\c_draughts_piece.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts_controls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts_entity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts_field.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debug\c_ogl_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\debug\c_oal_debug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

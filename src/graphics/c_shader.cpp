@@ -2,6 +2,26 @@
 
 namespace owd
 {
+    s_shader s_shader::gl_compute_shader_struct
+    {GL_COMPUTE_SHADER, "\/\/----start_gl_compute_shader----", "\/\/----end_gl_compute_shader----"};
+
+    s_shader s_shader::gl_vertex_shader_struct
+    {GL_VERTEX_SHADER, "\/\/----start_gl_vertex_shader----", "\/\/----end_gl_vertex_shader----"};
+
+    s_shader s_shader::gl_tess_control_shader_struct
+    {GL_TESS_CONTROL_SHADER, "\/\/----start_gl_tess_control_shader----", "\/\/----end_gl_tess_control_shader----"};
+
+    s_shader s_shader::gl_tess_evaluation_shader_struct
+    {GL_TESS_EVALUATION_SHADER, "\/\/----start_gl_tess_evaluation_shader----",
+        "\/\/----end_gl_tess_evaluation_shader----"};
+
+    s_shader s_shader::gl_geometry_shader_struct
+    {GL_GEOMETRY_SHADER, "\/\/----start_gl_geometry_shader----", "\/\/----end_gl_geometry_shader----"};
+
+    s_shader gl_fragment_shader_struct
+    {GL_FRAGMENT_SHADER, "\/\/----start_gl_fragment_shader----", "\/\/----end_gl_fragment_shader----"};
+
+
     c_shader::c_shader()
     {
         m_logger << "----c_basic_shader constructor START---- " << m_name << '\n';

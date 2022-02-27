@@ -1,6 +1,6 @@
 #pragma once
 #include "stb_image/stb_image.h"
-#include "../debug/ogl_debug.h"
+#include "../debug/c_ogl_debug.h"
 #include "../filesystem/c_file.h"
 
 namespace owd
@@ -53,6 +53,8 @@ namespace owd
 		inline GLuint gl_id() const { return m_ogl_id; }
 
 	private:
+		static int32_t m_init_stbi;
+
 		uint32_t m_ogl_id{};
 
 		int32_t m_w = -1;

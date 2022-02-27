@@ -9,6 +9,10 @@ namespace owd
     {
     }
 
+    void c_draughts_entity::move(float x_, float y_)
+    {
+    }
+
     void c_draughts_entity::add_textured(g_unit_textured_t& unit)
     {
         m_vec_textured.push_back(unit);

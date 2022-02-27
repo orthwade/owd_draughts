@@ -26,7 +26,6 @@ namespace owd
 		}
 	}
 	c_draughts::c_draughts()
-		: m_field(c_draughts_field())
     {
 		auto& squares_ = m_field.get_squares();
 		auto& squares_lines_ = squares_;
@@ -46,24 +45,23 @@ namespace owd
 				if (y < m_starting_lines_count)
 				{
 					square_ = squares_line_[x];
-					if (square_.black)
+					if (square_.is_black())
 					{
-						auto piece_ = c_draughts_man(square_, false);
-						m_men.push_back(piece_);
+						auto piece_ = c_draughts_piece(square_, draughts_white, draughts_man);
+						m_pieces_white.push_back(piece_);
 					}
 				}
 				else if (y >= squares_lines_.size() - m_starting_lines_count)
 				{
 					square_ = squares_line_[x];
-					if (square_.black)
+					if (square_.is_black())
 					{
-						auto piece_   = c_draughts_man(square_, true);
-						m_men.push_back(piece_);
+						auto piece_ = c_draughts_piece(square_, draughts_black, draughts_man);
+						m_pieces_black.push_back(piece_);
 					}
 				}
 			}
 		}
-		
     }
     c_draughts::~c_draughts()
     {

@@ -8,13 +8,13 @@ namespace owd
 	{
 	public:
 		static c_draughts* get_instance();
-		//void init();
 		static void terminate();
-		//void reset();
+
 	protected:
-		c_draughts_field m_field{};
-		std::vector<c_draughts_man>  m_men{};
-		std::vector<c_draughts_king> m_kings{};
+		c_draughts_field* m_field_ptr = c_draughts_field::get_instance();
+		c_draughts_field& m_field = *m_field_ptr;
+		std::vector<c_draughts_piece> m_pieces_white{};
+		std::vector<c_draughts_piece> m_pieces_black{};
 
 		uint16_t m_starting_lines_count = 3;
 

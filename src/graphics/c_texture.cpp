@@ -2,7 +2,7 @@
 
 namespace owd
 {
-    static int32_t init_stbi = c_texture::init_stbi();
+    int32_t c_texture::m_init_stbi{};
 
     int32_t c_texture::init_stbi()
     {
@@ -32,6 +32,10 @@ namespace owd
 
     void c_texture::init()
     {
+        if (m_init_stbi != 1)
+        {
+            m_init_stbi = init_stbi();
+        }
         GL_CALL(glGenTextures(1, &m_ogl_id));
     }
 

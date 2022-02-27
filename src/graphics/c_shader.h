@@ -40,26 +40,23 @@ namespace owd
 		std::string m_end_delimiter{};
 		std::string m_string{};
 		bool m_enabled = false;
+
+		static s_shader gl_compute_shader_struct;
+
+		static s_shader gl_vertex_shader_struct;
+
+		static s_shader gl_tess_control_shader_struct;
+
+		static s_shader gl_tess_evaluation_shader_struct;
+
+		static s_shader gl_geometry_shader_struct;
+
+		static s_shader gl_fragment_shader_struct;
+
 	};
 
-	const s_shader gl_compute_shader_struct
-	(GL_COMPUTE_SHADER, "\/\/----start_gl_compute_shader----", "\/\/----end_gl_compute_shader----");
 
-	const s_shader gl_vertex_shader_struct
-	(GL_VERTEX_SHADER, "\/\/----start_gl_vertex_shader----", "\/\/----end_gl_vertex_shader----");
 
-	const s_shader gl_tess_control_shader_struct
-	(GL_TESS_CONTROL_SHADER, "\/\/----start_gl_tess_control_shader----", "\/\/----end_gl_tess_control_shader----");
-
-	const s_shader gl_tess_evaluation_shader_struct
-	(GL_TESS_EVALUATION_SHADER, "\/\/----start_gl_tess_evaluation_shader----", 
-		"\/\/----end_gl_tess_evaluation_shader----");
-
-	const s_shader gl_geometry_shader_struct
-	(GL_GEOMETRY_SHADER, "\/\/----start_gl_geometry_shader----", "\/\/----end_gl_geometry_shader----");
-
-	const s_shader gl_fragment_shader_struct
-	(GL_FRAGMENT_SHADER, "\/\/----start_gl_fragment_shader----", "\/\/----end_gl_fragment_shader----");
 
 }
 
@@ -95,12 +92,19 @@ namespace owd
 
 		std::array<s_shader, 6> m_array_gl_shader_struct
 		{
-			gl_vertex_shader_struct,
-			gl_fragment_shader_struct,
-			gl_compute_shader_struct,
-			gl_tess_control_shader_struct,
-			gl_tess_evaluation_shader_struct,
-			gl_geometry_shader_struct
+			s_shader(GL_COMPUTE_SHADER, "\/\/----start_gl_compute_shader----", "\/\/----end_gl_compute_shader----"),
+
+			s_shader(GL_VERTEX_SHADER, "\/\/----start_gl_vertex_shader----", "\/\/----end_gl_vertex_shader----"),
+
+			s_shader(GL_TESS_CONTROL_SHADER, 
+			"\/\/----start_gl_tess_control_shader----", "\/\/----end_gl_tess_control_shader----"),
+
+			s_shader(GL_TESS_EVALUATION_SHADER, "\/\/----start_gl_tess_evaluation_shader----",
+			"\/\/----end_gl_tess_evaluation_shader----"),
+
+			s_shader(GL_GEOMETRY_SHADER, "\/\/----start_gl_geometry_shader----", "\/\/----end_gl_geometry_shader----"),
+
+			s_shader(GL_FRAGMENT_SHADER, "\/\/----start_gl_fragment_shader----", "\/\/----end_gl_fragment_shader----")
 		};
 
 		void compile();

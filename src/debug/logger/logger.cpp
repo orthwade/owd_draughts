@@ -13,7 +13,7 @@ namespace owd
         m_curr_dir_str(m_curr_dir()),
         m_logs_folder_path(m_curr_dir_str + L"/output/logs/"),
         m_time_date_str(c_convert_strings::unicode(m_time_date.time_date())),
-        m_date_str(m_time_date_str.substr(0, 9))
+        m_date_str(m_time_date_str.substr(0, 10))
         //m_log_file_path(m_logs_folder_path + m_date_str + L'/' + m_name + L".txt"),
         //m_common_log_file_path(m_logs_folder_path + m_date_str + L"/common_log.txt")
     {
@@ -34,7 +34,7 @@ namespace owd
         m_curr_dir_str(m_curr_dir()),
         m_logs_folder_path(m_curr_dir_str + L"/output/logs/"),
         m_time_date_str(c_convert_strings::unicode(m_time_date.time_date())),
-        m_date_str(m_time_date_str.substr(0, 9))
+        m_date_str(m_time_date_str.substr(0, 10))
         //m_log_file_path(m_logs_folder_path + m_date_str + L'/' + m_name + L".txt"),
         //m_common_log_file_path(m_logs_folder_path + m_date_str + L"/common_log.txt")
     {
@@ -56,7 +56,7 @@ namespace owd
         m_curr_dir_str(m_curr_dir()),
         m_logs_folder_path(m_curr_dir_str + L"/output/logs/"),
         m_time_date_str(c_convert_strings::unicode(m_time_date.time_date())),
-        m_date_str(m_time_date_str.substr(0, 9))
+        m_date_str(m_time_date_str.substr(0, 10))
         //m_log_file_path(m_logs_folder_path + m_date_str + L'/' + m_name + L".txt"),
         //m_common_log_file_path(m_logs_folder_path + m_date_str + L"/common_log.txt")
     {

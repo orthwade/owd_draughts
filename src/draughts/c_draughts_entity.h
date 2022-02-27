@@ -1,5 +1,13 @@
 #pragma once
 #include "../graphics/c_graphic_engine.h"
+#include "c_draughts_controls.h"
+
+namespace owd
+{
+	enum class enm_draughts_colour { white, black };
+	constexpr enm_draughts_colour draughts_white = enm_draughts_colour::white;
+	constexpr enm_draughts_colour draughts_black = enm_draughts_colour::black;
+}
 
 namespace owd
 {
@@ -8,6 +16,8 @@ namespace owd
 	public:
 		c_draughts_entity();
 		~c_draughts_entity();
+
+		void move(float x_, float y_);
 
 	protected:
 		float m_x = 0.0f;

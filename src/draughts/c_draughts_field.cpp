@@ -2,11 +2,13 @@
 
 namespace owd
 {
+    c_draughts_field* c_draughts_field::m_singleton = nullptr;
+
     c_draughts_field::c_draughts_field()
     {
         add_rect(0.0f, 0.0f, m_width, m_height, 0.9f, 0.9f, 0.9f, 1.0f, 0);
 
-        bool black = true;
+        enm_draughts_colour colour_ = draughts_black;
 
         float square_width  = m_width  / static_cast<float>(m_width_int  + 1);
         float square_height = m_height / static_cast<float>(m_height_int + 1);
@@ -31,15 +33,28 @@ namespace owd
                     y,
                     square_width,
                     square_height,
-                    black
+                    colour_
                 );
 
                 square_x_ += square_width;
-                black = !black;
-
+                if (colour_ == draughts_white)
+                {
+                    colour_ = draughts_black;
+                }
+                else
+                {
+                    colour_ = draughts_white;
+                }
                 add_coloured(m_squares[y][x].g_square());
             }
-            black = !black;
+            if (colour_ == draughts_white)
+            {
+                colour_ = draughts_black;
+            }
+            else
+            {
+                colour_ = draughts_white;
+            }
             square_y_ += square_height;
         }
         bool vertical = true;
@@ -59,9 +74,8 @@ namespace owd
 
         auto& mark_texture_filepath = files_in_directory(L"rsc/textures/draughts/marks/vertical/");
 
-        for (index_t i = 0; i != m_marks[0].size(); ++i)
+        for (index_t i = 0; i != m_height_int; ++i)
         {
-            auto& mark = m_marks[0][i];
             mark_y = m_squares[i][0].y;
             m_texture_bank->load(mark_texture_filepath[i]);
             auto texture_ = m_texture_bank->by_filepath(mark_texture_filepath[i]);
@@ -78,9 +92,8 @@ namespace owd
         mark_height /= 1.1f;
         mark_width  /= 1.1f;
 
-        for (index_t i = 0; i != m_marks[1].size(); ++i)
+        for (index_t i = 0; i != m_width_int; ++i)
         {
-            auto& mark = m_marks[1][i];
             mark_x = m_squares[0][i].x;
             m_texture_bank->load(mark_texture_filepath[i]);
             auto texture_ = m_texture_bank->by_filepath(mark_texture_filepath[i]);
@@ -97,7 +110,8 @@ namespace owd
     {
     }
     c_draughts_square::c_draughts_square
-    (float x_, float y_, uint16_t x_int_, uint16_t y_int_, float width_, float height_, bool black_)
+    (float x_, float y_, uint16_t x_int_, uint16_t y_int_, float width_, float height_,
+        enm_draughts_colour colour_)
         :
         x(x_),
         y(y_),
@@ -105,9 +119,9 @@ namespace owd
         y_int(y_int_),
         width(width_),
         height(height_),
-        black(black_)
+        colour(colour_)
     {
-        if (black)
+        if (is_black())
         {
             red   = 0.30f;
             green = 0.30f;
@@ -129,27 +143,27 @@ namespace owd
         gl_indices_t indices = { 0, 1, 2, 2, 3, 0 };
         m_g_square = std::make_shared<c_graphic_unit>(positions, indices, red, green, blue, 1.0f, 2);
     }
-    c_draughts_coordinate::c_draughts_coordinate()
+    c_draughts_field* owd::c_draughts_field::get_instance()
     {
+        if (m_singleton == nullptr)
+        {
+            m_singleton = new c_draughts_field();
+        }
+
+        return m_singleton;
     }
-    c_draughts_coordinate::c_draughts_coordinate(bool vertical, char symbol, uint8_t position, g_unit_textured_t& mark)
-        :
-        m_symbol(symbol),
-        m_vertical(vertical),
-        m_position(position),
-        m_g_mark(mark)
+    void c_draughts_field::terminate()
     {
+        if (m_singleton == nullptr)
+        {
+
+        }
+        else
+        {
+            delete m_singleton;
+            m_singleton = nullptr;
+        }
     }
-    c_draughts_coordinate::c_draughts_coordinate(const c_draughts_coordinate& other)
-        :
-        m_symbol    (other.m_symbol  ),
-        m_vertical  (other.m_vertical),
-        m_position  (other.m_position),
-        m_g_mark    (other.m_g_mark)
-    {
-    }
-    c_draughts_coordinate::~c_draughts_coordinate()
-    {
-    }
+
 }
 

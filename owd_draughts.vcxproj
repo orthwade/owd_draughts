@@ -159,6 +159,14 @@
     <ClCompile Include="src\audio\c_sound_source.cpp" />
     <ClCompile Include="src\audio\c_sound_source_bank.cpp" />
     <ClCompile Include="src\audio\ogg\ogg_.cpp" />
+    <ClCompile Include="src\debug\c_oal_debug.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="src\debug\c_ogl_debug.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="src\debug\imgui\c_test_imgui.cpp" />
     <ClCompile Include="src\debug\imgui\imgui.cpp" />
     <ClCompile Include="src\debug\imgui\imgui_demo.cpp" />
@@ -168,22 +176,11 @@
     <ClCompile Include="src\debug\imgui\imgui_tables.cpp" />
     <ClCompile Include="src\debug\imgui\imgui_widgets.cpp" />
     <ClCompile Include="src\debug\logger\logger.cpp" />
-    <ClCompile Include="src\draughts\c_draughts.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_entity.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_field.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
-    <ClCompile Include="src\draughts\c_draughts_piece.cpp">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts.cpp" />
+    <ClCompile Include="src\draughts\c_draughts_controls.cpp" />
+    <ClCompile Include="src\draughts\c_draughts_entity.cpp" />
+    <ClCompile Include="src\draughts\c_draughts_field.cpp" />
+    <ClCompile Include="src\draughts\c_draughts_piece.cpp" />
     <ClCompile Include="src\filesystem\c_file.cpp" />
     <ClCompile Include="src\filesystem\c_files_in_directory.cpp" />
     <ClCompile Include="src\filesystem\c_file_bank.cpp" />
@@ -217,10 +214,10 @@
     <ClCompile Include="src\graphics\rect\c_batch_coloured_figure.cpp" />
     <ClCompile Include="src\graphics\rect\c_batch_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_batch_textured_rect.cpp" />
-    <ClCompile Include="src\graphics\rect\c_graphic_unit.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_coloured_rect.cpp" />
     <ClCompile Include="src\graphics\rect\c_single_textured_rect.cpp" />
     <ClCompile Include="src\graphics\stb_image\stb_image.cpp" />
+    <ClCompile Include="src\input\c_input_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_circle.cpp" />
     <ClCompile Include="src\math\geometry\c_geom_figure.cpp" />
@@ -267,6 +264,14 @@
     <ClInclude Include="src\audio\openal\efx-presets.h" />
     <ClInclude Include="src\audio\openal\efx.h" />
     <ClInclude Include="src\audio\openal\openal.h" />
+    <ClInclude Include="src\debug\c_oal_debug.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="src\debug\c_ogl_debug.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="src\debug\imgui\c_test_imgui.h" />
     <ClInclude Include="src\debug\imgui\imconfig.h" />
     <ClInclude Include="src\debug\imgui\imgui.h" />
@@ -280,22 +285,11 @@
     <ClInclude Include="src\debug\logger\logger.h" />
     <ClInclude Include="src\debug\oal_debug.h" />
     <ClInclude Include="src\debug\ogl_debug.h" />
-    <ClInclude Include="src\draughts\c_draughts.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_entity.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_field.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
-    <ClInclude Include="src\draughts\c_draughts_piece.h">
-      <SubType>
-      </SubType>
-    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts.h" />
+    <ClInclude Include="src\draughts\c_draughts_controls.h" />
+    <ClInclude Include="src\draughts\c_draughts_entity.h" />
+    <ClInclude Include="src\draughts\c_draughts_field.h" />
+    <ClInclude Include="src\draughts\c_draughts_piece.h" />
     <ClInclude Include="src\filesystem\c_file.h" />
     <ClInclude Include="src\filesystem\c_files_in_directory.h" />
     <ClInclude Include="src\filesystem\c_file_bank.h" />
@@ -434,10 +428,10 @@
     <ClInclude Include="src\graphics\rect\c_batch_coloured_figure.h" />
     <ClInclude Include="src\graphics\rect\c_batch_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_batch_textured_rect.h" />
-    <ClInclude Include="src\graphics\rect\c_graphic_unit.h" />
     <ClInclude Include="src\graphics\rect\c_single_coloured_rect.h" />
     <ClInclude Include="src\graphics\rect\c_single_textured_rect.h" />
     <ClInclude Include="src\graphics\stb_image\stb_image.h" />
+    <ClInclude Include="src\input\c_input_manager.h" />
     <ClInclude Include="src\math\geometry\c_geom_circle.h" />
     <ClInclude Include="src\math\geometry\c_geom_figure.h" />
     <ClInclude Include="src\math\geometry\c_geom_triangle.h" />

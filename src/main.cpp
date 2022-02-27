@@ -19,5 +19,6 @@ int main()
 	graphic_engine->run();
 	graphic_engine->terminate();
 	sound_engine->terminate();
+	draughts->terminate();
 	return 0;
 }
