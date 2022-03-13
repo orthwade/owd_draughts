@@ -11,6 +11,10 @@ namespace owd
 
     void c_draughts_entity::move(float x_, float y_)
     {
+        for (index_t i = 0; i != m_vec_coloured.size(); ++i)
+        {
+            m_vec_coloured[i]->set_position(x_, y_);
+        }
     }
 
     void c_draughts_entity::add_textured(g_unit_textured_t& unit)
@@ -46,7 +50,7 @@ namespace owd
     {
         vertices_t positions{};
         gl_indices_t indices{};
-        uint16_t triangles_count = 100;
+        uint16_t triangles_count = 7;
         float angle_step = 360.0f / triangles_count;
         float angle = 90.0f + angle_step / 2.0f;
 

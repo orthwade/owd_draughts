@@ -24,6 +24,38 @@ namespace owd
         
     }
 
+    c_draughts_piece::c_draughts_piece(float x, float y, enm_draughts_colour colour, enm_draughts_piece type)
+        :
+        m_x(x),
+        m_y(y),
+        m_x_int(x),
+        m_y_int(y),
+        m_colour(colour),
+        m_type(type)
+    {
+        if (is_black())
+        {
+            m_red_1 = 0.0f;
+            m_green_1 = 0.6f;
+            m_blue_1 = 0.0f;
+        }
+        else
+        {
+            m_red_1 = 1.0f;
+            m_green_1 = 1.0f;
+            m_blue_1 = 1.0f;
+        }
+        if (is_king())
+        {
+
+        }
+        else
+        {
+            add_circle(m_x, m_y, m_radius, m_red_1, m_green_1, m_blue_1, 1.0f, 3);
+        }
+
+    }
+
     void c_draughts_piece::set_field_parameters
     (float square_width, float square_height, uint16_t square_count_x, uint16_t square_count_y)
     {
@@ -36,6 +68,16 @@ namespace owd
     }
     void c_draughts_piece::move(const c_draughts_square& square_)
     {
+        auto x = square_.x;
+        auto y = square_.y;
+
+        for (index_t i = 0; i != m_vec_coloured.size(); ++i)
+        {
+            m_vec_coloured[i]->set_position(x, y);
+        }
+        m_x = x;
+        m_y = y;
+
     }
     //c_draughts_piece::c_draughts_piece(uint16_t x, uint16_t y, enm_draughts_colour colour, enm_draughts_piece type)
     //    :
@@ -95,34 +137,34 @@ namespace owd
         }
 
     }
-    c_draughts_piece::c_draughts_piece(const c_draughts_piece& other)
-        :
-        m_x      (other. m_x     ), 
-		m_y      (other.m_y      ),
-		m_x_int  (other.m_x_int  ),
-		m_y_int  (other.m_y_int  ),
-        m_colour (other.m_colour),
-        m_type   (other.m_type),
-		m_red_1  (other.m_red_1  ),
-		m_green_1(other.m_green_1),
-		m_blue_1 (other.m_blue_1 )
-    {
-    }
-    c_draughts_piece& c_draughts_piece::operator=(const c_draughts_piece& other)
-    {
-        if (this != &other)
-        {
-            m_x       = other.m_x      ;
-            m_y       = other.m_y      ;
-            m_x_int   = other.m_x_int  ;
-            m_y_int   = other.m_y_int  ;
-            m_colour  = other.m_colour ;
-            m_type    = other.m_type   ;
-            m_red_1   = other.m_red_1  ;
-            m_green_1 = other.m_green_1;
-            m_blue_1  = other.m_blue_1 ;
-        }
-        return *this;
-    }
+  //  c_draughts_piece::c_draughts_piece(const c_draughts_piece& other)
+  //      :
+  //      m_x      (other. m_x     ), 
+		//m_y      (other.m_y      ),
+		//m_x_int  (other.m_x_int  ),
+		//m_y_int  (other.m_y_int  ),
+  //      m_colour (other.m_colour),
+  //      m_type   (other.m_type),
+		//m_red_1  (other.m_red_1  ),
+		//m_green_1(other.m_green_1),
+		//m_blue_1 (other.m_blue_1 ),
+  //  {
+  //  }
+  //  c_draughts_piece& c_draughts_piece::operator=(const c_draughts_piece& other)
+  //  {
+  //      if (this != &other)
+  //      {
+  //          m_x       = other.m_x      ;
+  //          m_y       = other.m_y      ;
+  //          m_x_int   = other.m_x_int  ;
+  //          m_y_int   = other.m_y_int  ;
+  //          m_colour  = other.m_colour ;
+  //          m_type    = other.m_type   ;
+  //          m_red_1   = other.m_red_1  ;
+  //          m_green_1 = other.m_green_1;
+  //          m_blue_1  = other.m_blue_1 ;
+  //      }
+  //      return *this;
+  //  }
 }
 

@@ -22,7 +22,6 @@ namespace owd
 
 		m_name = name;
 
-
 		m_gain = 0.99f;
 
 		m_reference_distance	= (m_sound_distance_model_ptr->default_reference_distance()); 

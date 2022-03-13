@@ -19,6 +19,8 @@ namespace owd
 
 		void move(float x_, float y_);
 
+		virtual void select() {}
+
 	protected:
 		float m_x = 0.0f;
 		float m_y = 0.0f;
@@ -34,8 +36,11 @@ namespace owd
 		std::vector<g_unit_textured_t> m_vec_textured  {};
 		std::vector<g_unit_t> m_vec_coloured  {};
 		
-		void add_textured(g_unit_textured_t& rect);
-		void add_coloured(g_unit_t& circle);
+		c_draughts_controls* m_draughts_controls_ptr = c_draughts_controls::get_instance();
+		c_draughts_controls& m_draughts_controls = *m_draughts_controls_ptr;
+
+		void add_textured(g_unit_textured_t& unit);
+		void add_coloured(g_unit_t& unit);
 
 		void add_rect		(float centre_x, float centre_y, float width, float height,
 			float red, float green, float blue, float alpha, uint16_t level);

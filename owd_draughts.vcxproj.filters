@@ -270,6 +270,12 @@
     <ClCompile Include="src\debug\c_oal_debug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_pipeline.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\draughts\c_draughts_event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\audio\ogg\codec.h">
@@ -1731,6 +1737,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\debug\c_oal_debug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts_pipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\draughts\c_draughts_event.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

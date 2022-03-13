@@ -15,11 +15,15 @@ namespace owd
 	{
 	public:
 		c_draughts_piece();
-		//c_draughts_piece(uint16_t x, uint16_t y, enm_draughts_colour black, enm_draughts_piece type);
-		c_draughts_piece(const c_draughts_square& square_, enm_draughts_colour black_, enm_draughts_piece type);
+		
+		c_draughts_piece
+		(const c_draughts_square& square_, enm_draughts_colour black_, enm_draughts_piece type);
 
-		c_draughts_piece(const c_draughts_piece&);
-		c_draughts_piece& operator=(const c_draughts_piece&);
+		c_draughts_piece
+		(float x, float y, enm_draughts_colour black_, enm_draughts_piece type);
+
+		//c_draughts_piece(const c_draughts_piece&);
+		//c_draughts_piece& operator=(const c_draughts_piece&);
 
 		inline bool is_black() { return m_colour == draughts_black; }
 		inline bool is_king() { return m_type == draughts_king; }

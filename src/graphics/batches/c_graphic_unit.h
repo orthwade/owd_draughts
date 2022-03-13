@@ -46,6 +46,7 @@ namespace owd
 			float red, float green, float blue, float alpha);
 
 		void set_position(float centre_x, float centre_y);
+		void move(float delta_x, float delta_y);
 
 		void resize(float size_multiplier);
 
@@ -74,7 +75,7 @@ namespace owd
 		inline uint16_t level() { return m_level; }
 
 		static std::shared_ptr<c_graphic_unit>& empty_unit();
-		static xy_t centre(const vertices_t& vertex_positions);
+		static xy_t centre(const vertices_t& vertex_positions, const gl_indices_t& indices);
 
 	private:
 		static GLint  m_max_vertices;

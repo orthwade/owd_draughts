@@ -62,6 +62,9 @@ namespace owd
 				}
 			}
 		}
+		m_pieces_white[0].move(squares_[4][5]);
+		auto test_piece = c_draughts_piece(0.0f, 0.0f, draughts_black, draughts_man);
+		test_piece.move(squares_[4][4]);
     }
     c_draughts::~c_draughts()
     {
